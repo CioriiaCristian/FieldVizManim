@@ -10,6 +10,7 @@ freq = Config.frequency
 arrow_size = Config.field_tip_scale_factor
 full_phase_rotations = Config.full_phase_number
 camera_rotation_rate = Config.ambient_camera_rotation_rate
+animation_time = Config.animation_time
 
 
 def get_sphere_faces_centers(u_resolution, v_resolution):
@@ -88,7 +89,7 @@ class FieldArrows(ThreeDScene):
         
         
         self.begin_ambient_camera_rotation(rate=camera_rotation_rate)
-        self.play(AnimationGroup(*[k.animate.set_value(full_phase_rotations) for k in value_trackers_list]), run_time = 5)
+        self.play(AnimationGroup(*[k.animate.set_value(full_phase_rotations) for k in value_trackers_list]), run_time = animation_time)
         self.play(Uncreate(sphere), run_time = 2)
         self.wait(2)
         self.stop_ambient_camera_rotation()
