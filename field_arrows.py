@@ -90,10 +90,9 @@ class FieldArrows(ThreeDScene):
         
         self.begin_ambient_camera_rotation(rate=camera_rotation_rate)
         self.play(AnimationGroup(*[k.animate.set_value(full_phase_rotations) for k in value_trackers_list]), run_time = animation_time)
-        self.play(Uncreate(sphere), run_time = 2)
-        self.wait(2)
+        self.play(Uncreate(sphere))
+        self.wait()
         self.stop_ambient_camera_rotation()
-        self.wait(3)
 
         #Enable interactive mode if you want to interact with the 3D Scene via mouse
         #self.interactive_embed()
