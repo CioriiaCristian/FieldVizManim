@@ -60,7 +60,7 @@ class FieldArrows(ThreeDScene):
                 -np.sin(_u), np.cos(_u), 0
             ])
             center_dots.append(
-                Dot(r_vector_direction, color = random_bright_color().get_hex(), fill_opacity = 0)
+                Dot(r_vector_direction, fill_opacity = 0)
                 .rotate(axis=phi_vector_direction, angle=_v)
                 )
             self.add(center_dots[idx])
